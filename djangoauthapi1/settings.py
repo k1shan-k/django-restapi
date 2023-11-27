@@ -169,9 +169,10 @@ SIMPLE_JWT = {
 PASSWORD_RESET_TIMEOUT=900          # 900 Sec = 15 Min
 
 CORS_ALLOWED_ORIGINS = [
+    "http://woro.ofkishan.co",
     "http://localhost:8000",
     "http://127.0.0.1:8000",
     "http://52.66.15.33:80",
     "http://52.66.15.33:8000",
-    "http://woro.ofkishan.co",
+    
 ]
