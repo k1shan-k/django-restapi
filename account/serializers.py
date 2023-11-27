@@ -33,7 +33,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         # Send confirmation email
         uid = urlsafe_base64_encode(force_bytes(user.id))
         token = PasswordResetTokenGenerator().make_token(user)
-        confirmation_link = 'http://localhost:8000/api/user/confirm/' + uid + '/' + token
+        confirmation_link = 'http://woro.ofkishan.co/api/user/confirm/' + uid + '/' + token
         body = 'Click the following link to confirm your email address: ' + confirmation_link
         data = {
             'subject': 'Confirm Your Email Address',
@@ -91,7 +91,7 @@ class SendPasswordResetEmailSerializer(serializers.Serializer):
       print('Encoded UID', uid)
       token = PasswordResetTokenGenerator().make_token(user)
       print('Password Reset Token', token)
-      link = 'http://localhost:8000/api/user/reset/'+uid+'/'+token
+      link = 'http://woro.ofkishan.co/api/user/reset/'+uid+'/'+token
       print('Password Reset Link', link)
       # Send EMail
       body = 'Click Following Link to Reset Your Password '+link
